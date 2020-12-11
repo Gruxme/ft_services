@@ -15,7 +15,10 @@ RUN addgroup sshgroup \
     && ssh-keygen -A
 COPY srcs/sshd_config /etc/ssh/sshd_config
 
-COPY srcs/index.php /var/www/localhost/htdocs/
-COPY srcs/setup.sh /
+COPY srcs/default.conf /etc/nginx/conf.d/default.conf
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+COPY srcs/index.html /var/www/localhost/htdocs/
+
+COPY srcs/startup.sh /
 RUN chmod +x /startup.sh
 CMD sh startup.sh
