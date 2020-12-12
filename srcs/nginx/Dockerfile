@@ -19,6 +19,9 @@ COPY srcs/default.conf /etc/nginx/conf.d/default.conf
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY srcs/index.html /var/www/localhost/htdocs/
 
+COPY srcs/probe.sh /
+RUN chmod +x /probe.sh
+
 COPY srcs/startup.sh /
 RUN chmod +x /startup.sh
 CMD sh startup.sh

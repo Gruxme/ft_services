@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 #Startup
-minikube start
-eval $(minikube docker-env)
+#minikube start
+#eval $(minikube docker-env)
 
 #Containers Creation
 docker build srcs/wordpress -t wordpress-local

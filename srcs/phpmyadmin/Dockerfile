@@ -14,6 +14,8 @@ COPY srcs/config.inc.php /var/www/localhost/htdocs/phpmyadmin/
 
 COPY srcs/setup.sh /
 RUN chmod +x /setup.sh
+COPY srcs/probe.sh /
+RUN chmod +x /probe.sh
 COPY srcs/startup.sh /
 RUN chmod +x /startup.sh
 RUN sh /setup.sh

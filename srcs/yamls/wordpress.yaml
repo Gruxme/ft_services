@@ -16,6 +16,13 @@ spec:
       - name: wordpress
         image: wordpress-local
         imagePullPolicy: Never
+        livenessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - /probe.sh
+            initialDelaySeconds: 10
+            periodSeconds: 5
         ports:
         - containerPort: 5050
 
