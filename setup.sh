@@ -1,9 +1,8 @@
 #!/bin/zsh
 
 #Startup
-#minikube start
-#minikube docker-env
-#eval $(minikube docker-env)
+minikube start
+eval $(minikube docker-env)
 
 #Containers Creation
 docker build srcs/influxdb -t influxdb-local

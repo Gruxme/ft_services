@@ -7,6 +7,7 @@ apk add grafana --update-cache --repository http://dl-cdn.alpinelinux.org/alpine
 apk add telegraf --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted && \
 apk add openrc && openrc reboot && mkdir /etc/telegraf/
 COPY srcs/telegraf.conf /etc/telegraf/telegraf.conf
+COPY srcs/grafana.db /usr/share/grafana/data/grafana.db
 
 WORKDIR /usr/share/grafana
 
