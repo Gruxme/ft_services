@@ -5,7 +5,8 @@ EXPOSE 3000
 RUN apk update && \
 apk add grafana --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted && \
 apk add telegraf --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted && \
-apk add openrc && openrc reboot
+apk add openrc && openrc reboot && mkdir /etc/telegraf/
+COPY srcs/telegraf.conf /etc/telegraf/telegraf.conf
 
 WORKDIR /usr/share/grafana
 
