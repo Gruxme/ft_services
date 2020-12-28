@@ -7,5 +7,4 @@ mysql -u root -e "CREATE DATABASE wordpress;"
 mysql -u root -e "GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'%'; FLUSH PRIVILEGES;"
 mysql -u root wordpress < /wordpress.sql
 rc-service mariadb restart
-rc-service telegraf start
-tail -f /dev/null
+telegraf & tail -f /dev/null
