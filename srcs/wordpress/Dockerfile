@@ -25,4 +25,4 @@ RUN sh /setup.sh
 COPY srcs/wp-config.php /var/www/localhost/htdocs/wordpress/wp-config.php
 COPY srcs/telegraf.conf /etc/telegraf/
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-CMD sh /startup.sh
+ENTRYPOINT sh /startup.sh

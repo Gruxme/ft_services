@@ -21,4 +21,4 @@ COPY srcs/startup.sh /
 RUN chmod +x /startup.sh
 RUN sh /setup.sh
 
-CMD sh /startup.sh
+ENTRYPOINT sh /startup.sh

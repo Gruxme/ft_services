@@ -12,4 +12,4 @@ RUN chmod +x /probe.sh
 COPY srcs/my.cnf /etc/mysql/my.cnf
 COPY srcs/telegraf.conf /etc/telegraf/
 COPY srcs/wordpress.sql /
-CMD sh /setup.sh
+ENTRYPOINT sh /setup.sh

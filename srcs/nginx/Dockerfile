@@ -26,4 +26,4 @@ RUN chmod +x /probe.sh
 
 COPY srcs/startup.sh /
 RUN chmod +x /startup.sh
-CMD sh startup.sh
+ENTRYPOINT sh startup.sh
